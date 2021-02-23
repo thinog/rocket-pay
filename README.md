@@ -15,3 +15,12 @@ Para acessar o container do banco de dados, utilize o comando:
 ```bash
 docker exec -it postgres bash
 ```
+
+## Comandos utilizados
+```bash
+mix phx.new rocketpay --no-webpack --no-html # starts a phoenix project
+mix ecto.setup # compile application
+mix deps.get # install dependencies
+mix credo gen.config # generate credo lint configs
+mix phx.server # starts application web server
+```

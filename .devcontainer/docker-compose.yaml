@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  elixir:
+    image: elixir
+    command: >
+      bash -c "
+        mix local.hex --force && 
+        mix archive.install hex phx_new 1.5.7
+      "
+    container_name: elixir
+    networks:
+      - elixir-network
+    ports:
+      - 4000:4000
+    volumes: 
+      - ..:/workspace/elixir
+    
+  postgres:
+    image: postgres
+    container_name: postgres
+    networks:
+      - elixir-network
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=postgres
+
+networks:
+  elixir-network:
+    driver: bridge
