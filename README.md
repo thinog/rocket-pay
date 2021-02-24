@@ -19,11 +19,17 @@ docker exec -it postgres bash
 ## Comandos utilizados
 ```bash
 mix phx.new rocketpay --no-webpack --no-html # starts a phoenix project
+mix ecto.create # creates a database
+mix ecto.drop # drops a database
+mix ecto.migrate # runs project migrations
 mix ecto.setup # alias to ecto.create -> ecto.migrate -> run seeds.exs
-mix deps.get # install dependencies
-mix credo gen.config # generate credo lint configs
+mix ecto.gen.migration <migration_name> # generates table scheme
+mix deps.get # installs dependencies
+mix credo gen.config # generates credo lint configs
 mix phx.server # starts application web server
-mix test
+mix test # run unit tests
 
-iex [-S mix]
+iex [-S mix] # opens elixir REPL
+
+recompile # compile changes when using iex
 ```
