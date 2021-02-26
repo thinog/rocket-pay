@@ -8,6 +8,8 @@
 	},
     "extensions": [
         "jakebecker.elixir-ls",
-        "iampeterbanjo.elixirlinter"
+        "iampeterbanjo.elixirlinter",
+        "yzhang.markdown-all-in-one",
+        "christian-kohler.path-intellisense"
     ]
 }

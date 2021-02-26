@@ -11,10 +11,4 @@ defmodule RocketpayWeb.UsersView do
       }
     }
   end
-
-  def render("400.json", %Ecto.Changeset{errors: errors}) do
-    %{
-      errors: errors
-    }
-  end
 end
