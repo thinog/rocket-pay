@@ -12,6 +12,4 @@ defmodule RocketpayWeb.UsersController do
       |> render("create.json", user: user)
     end
   end
-
-  defp handle_response({:error, _result} = error , _conn), do: error
 end
