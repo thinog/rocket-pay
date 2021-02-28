@@ -22,9 +22,22 @@ mix ecto.gen.migration <migration_name> # generates table scheme
 mix deps.get # installs dependencies
 mix credo gen.config # generates credo lint configs
 mix phx.server # starts application web server
-mix test # run unit tests
+mix test [--cover] # run unit tests
+mix coveralls.html # generate test coverage (needs excoveralls dep)
 
 iex [-S mix] # opens elixir REPL
 
 recompile # compile changes when using iex
 ```
+
+TO-DO além do ensinado:
+
+- [ ] Implementar extrato bancário
+- [ ] Implementar obter saldo
+- [ ] Implementar obter extrato por período
+- [ ] Implementar transferência por email (PIX? rsrs)
+- [ ] Implementar transferencia agendada
+- [ ] Editar cadastro
+- [ ] Cheque especial
+- [ ] Autenticação admin (basic_auth) vs autenticação correntista (bearer_auth)
+- [ ] Cobertura de teste de 100%

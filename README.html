@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>elixir-nlw</title>
+        <style>
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        
+        
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h1 id="elixir-nlw">elixir-nlw</h1>
+<p>Desenvolvimento de aplicação Elixir durante a quarta edição do evento Next Level Week.</p>
+<p>Requisitos:</p>
+<ul>
+<li>Docker</li>
+</ul>
+<p>Container com banco de dados Postgres e ambiente de desenvolvimento Elixir provisionados via Devcontainer do VS Code. Para iniciar os containers basta pressionar o símbolo azul que fica no canto esquerdo inferior da IDE e selecionar em &quot;Remote-Containers: Reopen in container&quot;, ou utilizar o atalho Ctrl+Shift+p, digitar &quot;remote-containers&quot; e ir na opção &quot;Remote-Containers: Reopen in container&quot;. Para mais detalhes, acesse a documentação do <a href="https://code.visualstudio.com/docs/remote/containers">Remote Containers</a>.</p>
+<p>O terminal do container Elixir fica disponível assim que é iniciado o Remote Containers. Para acessar o container do banco de dados, utilize o comando:</p>
+<pre><code class="language-bash"><div>docker <span class="hljs-built_in">exec</span> -it postgres bash
+</div></code></pre>
+<h2 id="comandos-utilizados">Comandos utilizados</h2>
+<pre><code class="language-bash"><div>mix phx.new rocketpay --no-webpack --no-html <span class="hljs-comment"># starts a phoenix project</span>
+mix ecto.create <span class="hljs-comment"># creates a database</span>
+mix ecto.drop <span class="hljs-comment"># drops a database</span>
+mix ecto.migrate <span class="hljs-comment"># runs project migrations</span>
+mix ecto.setup <span class="hljs-comment"># alias to ecto.create -&gt; ecto.migrate -&gt; run seeds.exs</span>
+mix ecto.gen.migration &lt;migration_name&gt; <span class="hljs-comment"># generates table scheme</span>
+mix deps.get <span class="hljs-comment"># installs dependencies</span>
+mix credo gen.config <span class="hljs-comment"># generates credo lint configs</span>
+mix phx.server <span class="hljs-comment"># starts application web server</span>
+mix <span class="hljs-built_in">test</span> <span class="hljs-comment"># run unit tests</span>
+
+iex [-S mix] <span class="hljs-comment"># opens elixir REPL</span>
+
+recompile <span class="hljs-comment"># compile changes when using iex</span>
+</div></code></pre>
+<p>TODO:
+[] Implementar extrato bancário
+[] Implementar get saldo/extrato
+[] Implementar transferencia por email (PIX? rsrs)</p>
+
+    </body>
+    </html>
